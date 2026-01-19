@@ -1,0 +1,332 @@
+/* --- GLOBAL STYLES & VARIABLES --- */
+:root {
+    --navy: #1F2437;
+    --blue: #01b7d4;
+    --orange: #e16a1e; /* primary button color */
+    --white: #ffffff;
+    --off-white: #f8f9fa;
+    --gray: #6c757d;
+    --light-gray: #adb5bd;
+    --email-box: #4A3F7A; /* large box around email templates */
+    --font-heading: 'Sora', sans-serif;
+    --font-body: 'Helvetica', 'Arial', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body), system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--white);
+    color: var(--navy);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-heading), system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.5rem; }
+p { margin-bottom: 1rem; color: var(--gray); }
+a { color: var(--blue); text-decoration: none; }
+
+/* --- BUTTONS --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(225, 106, 30, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--blue);
+    border: 2px solid var(--blue);
+}
+
+.btn-secondary:hover {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+/* --- HEADER --- */
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eee;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px;
+}
+
+header nav a {
+    color: var(--navy);
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--orange);
+}
+
+
+/* --- SECTIONS --- */
+section {
+    padding: 80px 0;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 120px;
+    background-color: var(--off-white);
+}
+
+.hero h1 {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 20px auto 40px;
+}
+
+.hero .btn-secondary {
+    margin-left: 15px;
+}
+
+/* Social Proof */
+.social-proof {
+    background-color: #fff;
+    padding: 40px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.social-proof .logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    filter: grayscale(100%);
+    opacity: 0.6;
+}
+
+.social-proof .logos img {
+    height: 35px;
+}
+
+/* Problem/Solution Section */
+.problem-solution .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Solutions Section */
+.solutions {
+    background-color: var(--off-white);
+}
+
+.solutions .card,
+.card.email-template,
+.card {
+    background-color: var(--email-box);
+    color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    padding: 40px;
+}
+
+.card a.btn {
+    background-color: var(--orange);
+    color: #fff;
+    border: none;
+    margin-top: 20px; /* moved from inline style in index.html */
+}
+
+/* Benefits Section */
+.benefits {
+    background-color: var(--navy);
+    color: var(--white);
+    text-align: center;
+}
+
+.benefits h2 { color: var(--white); }
+.benefits p { color: var(--light-gray); }
+
+.benefits .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.benefits .benefit-item {
+    background-color: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.benefits .benefit-item h3 { color: var(--white); }
+
+/* Testimonial Section */
+.testimonial {
+    background-color: var(--off-white);
+    text-align: center;
+}
+
+.testimonial blockquote {
+    font-family: var(--font-heading), system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.4;
+}
+
+.testimonial .author {
+    font-weight: bold;
+    color: var(--navy);
+}
+
+/* CTA Section */
+.cta {
+    text-align: center;
+}
+
+.cta-signup {
+    background-color: #4A3F7A;
+}
+
+.cta-signup h2 {
+    color: var(--white); /* white heading */
+}
+
+.cta-signup p {
+    color: var(--light-gray); /* lighter paragraph text for contrast */
+}
+
+.cta-signup form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cta-signup input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 300px;
+    font-size: 1rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 60px 0 20px;
+}
+
+footer .grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+footer h4 {
+    font-family: var(--font-heading), system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+footer ul { list-style: none; }
+footer a { color: var(--light-gray); transition: color 0.3s ease; }
+footer a:hover { color: var(--white); }
+footer li { margin-bottom: 8px; }
+
+footer .copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    color: var(--light-gray);
+}
+
+/* --- LEGAL PAGES --- */
+.legal-page {
+    padding: 80px 0;
+}
+
+.legal-page .content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.legal-page h2 {
+    margin-top: 2.5rem;
+}
+
+/* --- RESPONSIVE STYLES --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+
+    header nav { display: none; }
+
+    .problem-solution .grid,
+    .benefits .grid {
+        grid-template-columns: 1fr;
+    }
+
+    footer .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
